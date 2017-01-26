@@ -1,10 +1,13 @@
+<div style="text-align: center;">
+    <h3>Dashboard Lego House</h3>
+</div>
 <div style="text-align: center;" [hidden]='latestLivingRoomData'><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>
-<div class="row" *ngIf="latestLivingRoomData" style="padding-left: 20px">
-    <div class="col-md-3" style="padding-top: 20px;padding-bottom: 20px">
+<div class="row" *ngIf="latestLivingRoomData " style="padding-left:20px ">
+    <div class=" col-md-3 " style="padding-top: 20px;padding-bottom: 20px ">
         <md-card>
             <div class=" card-block ">
                 <h4 class="card-title ">
-                    <i class="material-icons orange600">lightbulb_outline</i> Light Status</h4>
+                    <i class="material-icons orange600 ">lightbulb_outline</i> Light Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.lamp}}</p>
                 <a class="btn btn-primary " (click)="toggleLight() ">Toggle Light</a>
             </div>
@@ -13,7 +16,7 @@
     <div class=" col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-sun-o " style="color:orangered" aria-hidden="true "></i> Heating Status</h4>
+                <h4 class="card-title "><i class="fa fa-sun-o " style="color:orangered " aria-hidden="true "></i> Heating Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.heating}}</p>
                 <a class="btn btn-primary " (click)="toggleHeating() ">Toggle Heating</a>
 
@@ -23,7 +26,7 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown"></i> Door Status</h4>
+                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown "></i> Door Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.doorSensor}}</p>
             </div>
         </md-card>
@@ -31,19 +34,18 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue"></i> Window Status</h4>
+                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Window Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.windowSensor}}</p>
             </div>
         </md-card>
     </div>
-
 </div>
 <br>
-<div class="row " *ngIf="latestLivingRoomData " style="padding-left:20px">
+<div class="row " *ngIf="latestLivingRoomData " style="padding-left:20px ">
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters" style="color:orangered" aria-hidden="true "></i> Current Temperature</h4>
+                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters " style="color:orangered " aria-hidden="true "></i> Current Temperature</h4>
                 <p class="card-text ">Temperature: {{latestLivingRoomData.tempSensor}}</p>
             </div>
         </md-card>
@@ -51,7 +53,7 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="material-icons " style="color:yellow">lightbulb_outline</i> Light Sensor Status</h4>
+                <h4 class="card-title "><i class="material-icons " style="color:yellow ">lightbulb_outline</i> Light Sensor Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.lightSensor}}</p>
             </div>
         </md-card>
@@ -59,7 +61,7 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-wheelchair-alt " aria-hidden="true " style="color:brown"></i> Moving Sensor Status</h4>
+                <h4 class="card-title "><i class="fa fa-wheelchair-alt " aria-hidden="true " style="color:brown "></i> Moving Sensor Status</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.movingSensor}}</p>
             </div>
         </md-card>
@@ -67,7 +69,7 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-clock-o " aria-hidden="true " style="color:crimson"></i> Last Change</h4>
+                <h4 class="card-title "><i class="fa fa-clock-o " aria-hidden="true " style="color:crimson "></i> Last Change</h4>
                 <p class="card-text ">Date: {{latestLivingRoomData.createdAt | date:'dd/mm/yyyy @ h:mm:ssa'}}</p>
             </div>
         </md-card>
