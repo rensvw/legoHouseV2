@@ -1,0 +1,10 @@
+{
+    "/api/livingroom": {
+        "target": "http://localhost:3333",
+        "logLevel": "debug"
+    },
+    "/api/latestlivingroom": {
+        "target": "http://localhost:3333",
+        "logLevel": "debug"
+    }
+}
