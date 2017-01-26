@@ -14,7 +14,9 @@ export class DashboardComponent implements OnInit {
 
   livingroomdata: Livingroom[];
   latestLivingRoomData: Livingroom[];
-  refreshTime: Number = 1000;
+  refreshTime: Number = 500;
+  lightData: any = 0;
+  heatingData: any = 0;
 
   constructor(
      private apiService: ApiService,
@@ -37,6 +39,16 @@ export class DashboardComponent implements OnInit {
         });
     }
 
+  toggleLight() {
+    this.apiService.toggleLight()
+    .subscribe(lightData => this.lightData = lightData);
+  }
+
+toggleHeating() {
+    this.apiService.toggleHeating()
+    .subscribe(heatingData => this.heatingData = heatingData);
+
+  }
 
   click() {
     this.getLatestLivingroom(this.refreshTime);
