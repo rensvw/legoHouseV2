@@ -2,8 +2,8 @@
     <h3>Dashboard Lego House</h3>
 </div>
 <div style="text-align: center;" [hidden]='latestLivingRoomData'><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>
-<div class="row" *ngIf="latestLivingRoomData " style="padding-left:20px ">
-    <div class=" col-md-3 " style="padding-top: 20px;padding-bottom: 20px ">
+<div class="row" *ngIf="latestLivingRoomData" style="padding-right:20px;padding-left:20px">
+    <div class=" col-md-3 " style="padding-top: 20px;padding-bottom: 20px">
         <md-card>
             <div class=" card-block ">
                 <h4 class="card-title ">
@@ -31,7 +31,7 @@
             </div>
         </md-card>
     </div>
-    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px;">
         <md-card>
             <div class="card-block ">
                 <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Window Status</h4>
@@ -41,7 +41,7 @@
     </div>
 </div>
 <br>
-<div class="row " *ngIf="latestLivingRoomData " style="padding-left:20px ">
+<div class="row" *ngIf="latestLivingRoomData" style="padding-right:20px;padding-left:20px">
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
@@ -66,9 +66,9 @@
             </div>
         </md-card>
     </div>
-    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px;">
         <md-card>
-            <div class="card-block ">
+            <div class=" card-block ">
                 <h4 class="card-title "><i class="fa fa-clock-o " aria-hidden="true " style="color:crimson "></i> Last Change</h4>
                 <p class="card-text ">Date: {{latestLivingRoomData.createdAt | date:'dd/mm/yyyy @ h:mm:ssa'}}</p>
             </div>
