@@ -12,22 +12,19 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-                <li><a [routerLink]="['/home']">Home</a></li>
                 <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
+                <li><a [routerLink]="['/settings']">Settings</a></li>
 
             </ul>
 
         </div>
     </div>
 </nav>
-<br>
-<div class=" app-content ">
+
+<router-outlet></router-outlet>
 
 
-    <router-outlet></router-outlet>
 
-
-</div>
 <br>
 
 <footer>

@@ -11,19 +11,19 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import 'hammerjs';
 
 // Components
-import { HomeComponent } from './components/home/home.component';
 import { ApiService } from './services/api/api.service';
 
 // Routing
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     DashboardComponent,
+    SettingsComponent,
   ],
   imports: [
     FlexLayoutModule.forRoot(),

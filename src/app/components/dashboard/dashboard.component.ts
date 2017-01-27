@@ -17,6 +17,7 @@ export class DashboardComponent implements OnInit {
   refreshTime: Number = 500;
   lightData: any = 0;
   heatingData: any = 0;
+  movingsensor: any = 0;
 
   constructor(
      private apiService: ApiService,
@@ -35,9 +36,19 @@ export class DashboardComponent implements OnInit {
         .switchMap(() => this.http.get('api/latestlivingroom')).map((data) => data.json())
         .subscribe((data) => {
           this.latestLivingRoomData = data; 
+          this.movingSensor(data.movingSensor);
            console.log(data);// see console you get output every 5 sec
         });
     }
+  
+  movingSensor(sensor){
+    if(sensor>='17'){
+      return 0;
+    }
+    else{
+      return 1;
+    }
+  };
 
   toggleLight() {
     this.apiService.toggleLight()

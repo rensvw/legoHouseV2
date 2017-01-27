@@ -7,8 +7,10 @@
         <md-card>
             <div class=" card-block ">
                 <h4 class="card-title ">
-                    <i class="material-icons orange600 ">lightbulb_outline</i> Light Status</h4>
-                <p class="card-text ">Status: {{latestLivingRoomData.lamp}}</p>
+                    <i class="material-icons orange600 ">lightbulb_outline</i> Light</h4>
+                <p class="card-text" *ngIf="latestLivingRoomData.lamp=='1'">Status: On</p>
+                <p class="card-text "*ngIf="latestLivingRoomData.lamp=='0'">Status: Off</p>
+
                 <a class="btn btn-primary " (click)="toggleLight() ">Toggle Light</a>
             </div>
         </md-card>
@@ -16,8 +18,9 @@
     <div class=" col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-sun-o " style="color:orangered " aria-hidden="true "></i> Heating Status</h4>
-                <p class="card-text ">Status: {{latestLivingRoomData.heating}}</p>
+                <h4 class="card-title "><i class="fa fa-sun-o " style="color:orangered " aria-hidden="true "></i> Heating</h4>
+                <p class="card-text" *ngIf="latestLivingRoomData.heating=='1'">Status: On</p>
+                <p class="card-text "*ngIf="latestLivingRoomData.heating=='0'">Status: Off</p>
                 <a class="btn btn-primary " (click)="toggleHeating() ">Toggle Heating</a>
 
             </div>
@@ -26,16 +29,18 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown "></i> Door Status</h4>
-                <p class="card-text ">Status: {{latestLivingRoomData.doorSensor}}</p>
+                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown "></i> Door</h4>
+               <p class="card-text" *ngIf="latestLivingRoomData.doorSensor=='1'">Status: Open</p>
+                <p class="card-text "*ngIf="latestLivingRoomData.doorSensor=='0'">Status: Closed</p>
             </div>
         </md-card>
     </div>
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px;">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Window Status</h4>
-                <p class="card-text ">Status: {{latestLivingRoomData.windowSensor}}</p>
+                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Window</h4>
+                <p class="card-text" *ngIf="latestLivingRoomData.windowSensor=='1'">Status: Open</p>
+                <p class="card-text "*ngIf="latestLivingRoomData.windowSensor=='0'">Status: Closed</p>
             </div>
         </md-card>
     </div>
@@ -45,15 +50,7 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters " style="color:orangered " aria-hidden="true "></i> Current Temperature</h4>
-                <p class="card-text ">Temperature: {{latestLivingRoomData.tempSensor}}</p>
-            </div>
-        </md-card>
-    </div>
-    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
-        <md-card>
-            <div class="card-block ">
-                <h4 class="card-title "><i class="material-icons " style="color:yellow ">lightbulb_outline</i> Light Sensor Status</h4>
+                <h4 class="card-title "><i class="material-icons " style="color:yellow ">lightbulb_outline</i> Light Sensor</h4>
                 <p class="card-text ">Status: {{latestLivingRoomData.lightSensor}}</p>
             </div>
         </md-card>
@@ -61,8 +58,18 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-wheelchair-alt " aria-hidden="true " style="color:brown "></i> Moving Sensor Status</h4>
-                <p class="card-text ">Status: {{latestLivingRoomData.movingSensor}}</p>
+                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters " style="color:orangered " aria-hidden="true "></i> Current Temperature</h4>
+                <p class="card-text ">Temperature: {{latestLivingRoomData.tempSensor}}</p>
+            </div>
+        </md-card>
+    </div>
+
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+        <md-card>
+            <div class="card-block ">
+                <h4 class="card-title "><i class="fa fa-wheelchair-alt " aria-hidden="true " style="color:brown "></i> Moving Sensor Livingroom</h4>
+                <p class="card-text" *ngIf="latestLivingRoomData.movingSensor!='17'">Status: Present</p>
+                <p class="card-text "*ngIf="latestLivingRoomData.movingSensor=='17'">Status: Absent</p>
             </div>
         </md-card>
     </div>

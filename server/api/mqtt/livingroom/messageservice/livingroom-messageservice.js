@@ -12,37 +12,37 @@ let MessageService = {};
 
 MessageService.LightOn = {
     publish: () => {
-        client.publish(topic, "lighton#");
+        client.publish(topic, "lightOn#");
     },
     response: () => {
-        return 'Light turned on!';
+        return 1;
     }
 };
 
 MessageService.LightOff = {
     publish: () => {
-        client.publish(topic, "lightoff#");
+        client.publish(topic, "lightOff#");
     },
     response: () => {
-        return 'Light turned off!';
+        return 0;
     }
 };
 
 MessageService.HeatingOn = {
     publish: () => {
-        client.publish(topic, "heatingon#");
+        client.publish(topic, "heatingOn#");
     },
     response: () => {
-        return 'Heating turned on!';
+        return 1;
     }
 };
 
 MessageService.HeatingOff = {
     publish: () => {
-        client.publish(topic, "heatingoff#");
+        client.publish(topic, "heatingOff#");
     },
     response: () => {
-        return 'Heating turned off!';
+        return 0;
     }
 };
 

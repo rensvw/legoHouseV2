@@ -1,27 +1,70 @@
-<!--<div style="text-align: center;" [hidden]='latestLivingRoomData'>
-    <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>-->
-<div class="row">
-    <div class="col-md-3" style="padding-top:20px;padding-bottom:20px">
+<div style="text-align: center;">
+    <h3>Settings Lego House</h3>
+</div>
+<div style="text-align: center;" [hidden]='settings'><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>
+<div class="row" *ngIf="settings" style="padding-right:20px;padding-left:20px">
+    <div class=" col-md-3 " style="padding-top: 20px;padding-bottom: 20px">
+        <md-card>
+            <div class=" card-block ">
+                <h4 class="card-title ">
+                    <i class="material-icons orange600 ">lightbulb_outline</i> Home Automation</h4>
+                <p class="card-text">Status: {{settings.automation}}</p>
+            </div>
+        </md-card>
+    </div>
+    <div class=" col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title">
-                    <i class="fa fa-home" aria-hidden="true"> Home Automation</i></h4>
-                <p class="card-text ">Turned: ON/OFF</p>
-                <a class="btn btn-primary">Toggle</a>
+                <h4 class="card-title "><i class="fa fa-sun-o " style="color:orangered " aria-hidden="true "></i> Minimum Temperature</h4>
+                <p class="card-text">Status: {{settings.minTemp}}</p>
+
+            </div>
+        </md-card>
+    </div>
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+        <md-card>
+            <div class="card-block ">
+                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown "></i> Automatic Light Detection</h4>
+                              <p class="card-text">Status: {{settings.lightDetect}}</p>
+
+            </div>
+        </md-card>
+    </div>
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px;">
+        <md-card>
+            <div class="card-block ">
+                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Alarm Status</h4>
+                <p class="card-text">Alarm Armed: {{settings.alarm}}</p>
+                <p class="card-text">Alarm State: {{settings.alarmState}}</p>
+                
+                <a class="btn btn-primary " (click)="toggleLight() ">Toggle Alarm</a>
+
+            </div>
+        </md-card>
+    </div>
+</div>
+<br>
+<div class="row" *ngIf="settings" style="padding-right:20px;padding-left:20px">
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+        <md-card>
+            <div class="card-block ">
+                <h4 class="card-title "><i class="material-icons " style="color:yellow ">lightbulb_outline</i> Sleeping</h4>
+                <p class="card-text">Status: {{settings.sleeping}}</p>
+                <a class="btn btn-primary " (click)="toggleLight() ">Toggle Sleeping</a>
+                
+            </div>
+        </md-card>
+    </div>
+    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
+        <md-card>
+            <div class="card-block ">
+                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters " style="color:orangered " aria-hidden="true "></i> Currently Home?</h4>
+                <p class="card-text">Status: {{settings.home}}</p>
+                <a class="btn btn-primary " (click)="toggleLight() ">Toggle Home</a>
+                
             </div>
         </md-card>
     </div>
 
-    <div class="col-md-3" style="padding-top:20px;padding-bottom:20px">
-        <md-card>
-            <div class="card-block ">
-                <h4 class="card-title">
-                    <i class="fa fa-home" aria-hidden="true"> Minimum Temperature</i></h4>
-                <p class="card-text ">Turned: ON/OFF</p>
-                <a class="btn btn-primary">Toggle</a>
-            </div>
-        </md-card>
-    </div>
-
-
+   
 </div>

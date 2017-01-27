@@ -38,7 +38,7 @@ livingRoomValuesSchema.statics.getLatestLivingRoomValue = () => {
 
         LivingRoom
             .findOne()
-            .sort('createdAt')
+            .sort('-createdAt')
             .exec((err, livingroom) => {
                 err ? reject(err) :
                     resolve(livingroom);

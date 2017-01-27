@@ -1,10 +1,31 @@
 {
     "/api/livingroom": {
-        "target": "http://localhost:3333",
+        "target": "http://localhost:8080",
         "logLevel": "debug"
     },
     "/api/latestlivingroom": {
-        "target": "http://localhost:3333",
+        "target": "http://localhost:8080",
+        "logLevel": "debug"
+    },
+    "/api/mqtt/livingroom/togglelight": {
+        "target": "http://localhost:8080",
+        "logLevel": "debug"
+    },
+
+    "/api/mqtt/livingroom/toggleheating": {
+        "target": "http://localhost:8080",
+        "logLevel": "debug"
+    }
+    ,
+
+    "/api/settings": {
+        "target": "http://localhost:8080",
+        "logLevel": "debug"
+    }
+    ,
+
+    "/api/setting": {
+        "target": "http://localhost:8080",
         "logLevel": "debug"
     }
 }
