@@ -68,8 +68,7 @@
         <md-card>
             <div class="card-block ">
                 <h4 class="card-title "><i class="fa fa-wheelchair-alt " aria-hidden="true " style="color:brown "></i> Moving Sensor Livingroom</h4>
-                <p class="card-text" *ngIf="latestLivingRoomData.movingSensor!='17'">Status: Present</p>
-                <p class="card-text "*ngIf="latestLivingRoomData.movingSensor=='17'">Status: Absent</p>
+                <p class="card-text ">Distance: {{latestLivingRoomData.movingSensor}}</p>
             </div>
         </md-card>
     </div>

@@ -1,4 +1,7 @@
 import SettingsDAO from '../dao/settings-dao';
+import Rx from 'rxjs/Rx';
+import homeAutomation from './../../../automation/automation';
+
 
 export default class SettingsController {
 
@@ -12,10 +15,12 @@ export default class SettingsController {
     static updateSettings(req, res) {
         let _settings = req.body;
         let _id = req.params.id;
+        
         SettingsDAO
             .updateSettings(_id, _settings)
-            .then(settings => res.status(201).json(settings))
+            .then(settings => res.status(201).json(settings),homeAutomation.start())
             .catch(error => res.status(400).json(error));
+            
 
     }
 

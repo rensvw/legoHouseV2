@@ -2,7 +2,7 @@
 import mqtt from 'mqtt';
 import MessageService from '../messageservice/livingroom-messageservice';
 
-const client = mqtt.connect('mqtt://192.168.1.7');
+const client = mqtt.connect('mqtt://94.211.191.154');
 const topic = "legoHouseWoonkamerInput";
 import request from 'request';
 

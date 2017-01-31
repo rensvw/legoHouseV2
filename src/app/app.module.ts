@@ -8,6 +8,7 @@ import { HttpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {SettingsService} from './services/settings/settings.service'
 import 'hammerjs';
 
 // Components
@@ -36,7 +37,8 @@ import { SettingsComponent } from './components/settings/settings.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true }),
   ],
   providers: [
-    ApiService
+    ApiService,
+    SettingsService
   ],
   bootstrap: [ AppComponent ]
 })

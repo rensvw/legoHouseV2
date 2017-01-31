@@ -46,6 +46,7 @@ settingsSchema.statics.updateSettings = (id, settings) => {
     return new Promise((resolve, reject) => {
         if (!_.isString(id))
             return reject(new TypeError('Id is not a valid string.'));
+             console.log(settings);
         Settings
             .findByIdAndUpdate(id, {
                 $set: {
@@ -60,8 +61,9 @@ settingsSchema.statics.updateSettings = (id, settings) => {
             })
             .exec((err, saved) => {
                 err ? reject(err) :
-                    resolve(settings);
+                    resolve(settings),console.log(settings);;
             });
+            
     });
 }
 

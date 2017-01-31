@@ -11,17 +11,23 @@ import {Observable} from 'rxjs/Rx';
 })
 export class SettingsComponent implements OnInit {
 
-
   settings: Settings[];
-  refreshTime: Number = 1000;
+  refreshTime: Number = 5000;
 
 
   constructor(
-     private http: Http) { }
+     private http: Http,
+     private settingsService: SettingsService
+   ) { }
 
+   updateSettings(){
+     console.log(this.settings);
+     this.settingsService.updateSettings(this.settings).subscribe(settings => this.settings = settings);
+     console.log("settings changed");
+   }
 
      getSettings(refreshTime): void {
-      Observable.interval(0)
+      Observable.interval(refreshTime)
         .switchMap(() => this.http.get('api/settings')).map((data) => data.json())
         .subscribe((data) => {
           this.settings = data; 
@@ -30,7 +36,8 @@ export class SettingsComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getSettings(this.refreshTime);
+    this.settingsService.getSettings().subscribe(settings => this.settings = settings);
+    console.log(this.settings);
   }
 
 }
