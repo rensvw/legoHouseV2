@@ -17,6 +17,7 @@ import path from 'path';
 import helmet from 'helmet';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import homeAutomation from './server/automation/automation'
 
 
 const app = express();
@@ -58,6 +59,7 @@ const opts = {
 
 http.createServer(app)
     .listen(PORT, () => {
+        homeAutomation.start();
         console.log(`up and running @: ${os.hostname()} on port: ${PORT}`);
         console.log(`enviroment: ${process.env.NODE_ENV}`);
     });

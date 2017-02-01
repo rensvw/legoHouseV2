@@ -18,7 +18,7 @@ export default class SettingsController {
         
         SettingsDAO
             .updateSettings(_id, _settings)
-            .then(settings => res.status(201).json(settings),homeAutomation.start())
+            .then(settings => res.status(201).json(settings))
             .catch(error => res.status(400).json(error));
             
 
