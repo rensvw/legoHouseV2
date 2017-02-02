@@ -7,6 +7,7 @@ export class Livingroom {
     public windowSensor: string,
     public tempSensor: string,
     public lightSensor: string,
+    public buzzerState: string,
     public createdAt: Date
     ) {}
 }

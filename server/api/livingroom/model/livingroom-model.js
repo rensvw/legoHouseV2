@@ -9,6 +9,7 @@ const _livingRoomValuesSchema = {
     windowSensor: String,
     tempSensor: String,
     lightSensor: String,
+    buzzerState: String,
     createdAt: { type: Date, default: Date.now }
 };
 

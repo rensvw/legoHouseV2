@@ -15,6 +15,12 @@ export default class LivingRoomRoutes {
         router
             .route('/api/mqtt/livingroom/heatingoff')
             .get(LivingRoomController.HeatingOff);
+        router
+            .route('/api/mqtt/livingroom/buzzeron')
+            .get(LivingRoomController.BuzzerOn);
+        router
+            .route('/api/mqtt/livingroom/buzzeroff')
+            .get(LivingRoomController.BuzzerOff);
 
 
         // get all the bears (accessed at GET http://localhost:8080/api/livingroom)

@@ -46,4 +46,22 @@ MessageService.HeatingOff = {
     }
 };
 
+MessageService.BuzzerOn = {
+    publish: () => {
+        client.publish(topic, "buzzerOn#");
+    },
+    response: () => {
+        return 1;
+    }
+};
+
+MessageService.BuzzerOff = {
+    publish: () => {
+        client.publish(topic, "buzzerOff#");
+    },
+    response: () => {
+        return 0;
+    }
+};
+
 export default MessageService;

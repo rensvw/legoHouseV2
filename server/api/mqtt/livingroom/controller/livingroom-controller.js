@@ -63,4 +63,15 @@ export default class LivingRoomController {
 
     }
 
+    static BuzzerOn(req, res) {
+        MessageService.BuzzerOn.publish();
+        res.json(MessageService.BuzzerOn.response());
+    }
+
+    static BuzzerOff(req, res) {
+        MessageService.BuzzerOff.publish();
+        res.json(MessageService.BuzzerOff.response());
+    }
+
+
 }

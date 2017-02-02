@@ -3,17 +3,20 @@
 </div>
 <div style="text-align: center;" [hidden]='settings'><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span></div>
 <form *ngIf="settings" (ngSubmit)="updateSettings()" novalidate>
-    <div class="row" *ngIf="settings" style="text-align: center"><button type="submit">Save Settings</button></div>
+    <div class="row" *ngIf="settings" style="text-align: center"><button md-raised-button style="background-color: rgb(12, 132, 228);color:white" type="submit">Save Settings</button></div>
 <div class="row" *ngIf="settings" style="padding-right:20px;padding-left:20px">
     <div class=" col-md-3 " style="padding-top: 20px;padding-bottom: 20px">
         <md-card>
             <div class=" card-block ">
                 <h4 class="card-title ">
-                    <i class="material-icons orange600 ">lightbulb_outline</i> Home Automation</h4>
+                    <i class="fa fa-home" aria-hidden="true" style="color:blue "></i> Home Automation</h4>
                 <p class="card-text">Status: 
-                    <md-input-container >
-                        <input  md-input [(ngModel)]="settings.automation" name="automation" value="{{settings.automation}}">
-                    </md-input-container>
+                   
+                        <md-slide-toggle color="primary" [(ngModel)]="settings.automation" name="automation">
+  {{settings.automation}}
+</md-slide-toggle>
+                       
+                  
                     </p>
             </div>
         </md-card>
@@ -32,10 +35,11 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-sign-out " aria-hidden="true " style="color:brown "></i> Automatic Light Detection</h4>
-                              <p class="card-text">Status: <md-input-container>
-                        <input [(ngModel)]="settings.lightDetect" name="lightDetect"  md-input value="{{settings.lightDetect}}">
-                    </md-input-container></p>
+                <h4 class="card-title "><i class="material-icons orange600 " style="color:yellow ">lightbulb_outline</i> Automatic Light</h4>
+                              <p class="card-text"> Status: 
+                        <md-slide-toggle color="primary" [(ngModel)]="settings.lightDetect" name="lightDetect">
+  {{settings.lightDetect}}
+</md-slide-toggle></p>
 
             </div>
         </md-card>
@@ -43,11 +47,15 @@
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px;">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-windows " aria-hidden="true " style="color:blue "></i> Alarm Status</h4>
-                <p class="card-text">Status: <md-input-container>
-                        <input [(ngModel)]="settings.alarm" name="alarm" md-input value="{{settings.alarm}}">
-                    </md-input-container></p>
-                <p class="card-text">Alarm State: {{settings.alarmState}}</p>
+                <h4 class="card-title "><i class="fa fa-bell-o" aria-hidden="true" style="color:darkred "></i> Alarm</h4>
+               <p class="card-text">Status: 
+                   
+                        <md-slide-toggle color="primary" [(ngModel)]="settings.alarm" name="alarm">
+  {{settings.alarm}}
+</md-slide-toggle>
+                       
+                  
+                    </p>
                  
 
             </div>
@@ -56,30 +64,25 @@
 </div>
 <br>
 <div class="row" *ngIf="settings" style="padding-right:20px;padding-left:20px">
+   
     <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
         <md-card>
             <div class="card-block ">
-                <h4 class="card-title "><i class="material-icons " style="color:yellow ">lightbulb_outline</i> Sleeping</h4>
-                 <p class="card-text">Status: <md-input-container>
-                        <input [(ngModel)]="settings.sleeping" name="sleeping" md-input value="{{settings.sleeping}}">
-                    </md-input-container></p>
-                
-            </div>
-        </md-card>
-    </div>
-    <div class="col-md-3 " style="padding-top:20px;padding-bottom:20px ">
-        <md-card>
-            <div class="card-block ">
-                <h4 class="card-title "><i class="fa fa-thermometer-three-quarters " style="color:orangered " aria-hidden="true "></i> Currently Home?</h4>
-                 <p class="card-text">Status: <md-input-container>
-                        <input [(ngModel)]="settings.home" name="home" md-input value="{{settings.home}}">
-                    </md-input-container></p>
+                <h4 class="card-title "><i class="fa fa-bed" aria-hidden="true" style="color:orangered " aria-hidden="true "></i> Currently Home</h4>
+                 <p class="card-text">Status: 
+                   
+                        <md-slide-toggle color="primary" [(ngModel)]="settings.home" name="home">
+  {{settings.home}}
+</md-slide-toggle>
+                       
+                  
+                    </p>
                 
             </div>
         </md-card>
     </div>
     <md-input-container>
-<input [(ngModel)]="settings._id" name="id" md-input value="588a1d4f94110637494d089f">{{settings._id}}
+<input [hidden]="true" [(ngModel)]="settings._id" name="id" md-input value="588a1d4f94110637494d089f">
 </md-input-container>
    
 </div>
