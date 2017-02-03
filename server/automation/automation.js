@@ -66,49 +66,73 @@ export default class Automation {
             });
 
         function lightDetect() {
-            if (_settings.lightDetect == 'true') {
+            if (_settings.lightDetect == 'true' && _settings.home == 'true') {
+             
                 console.log("Moving: ", _livingroom.movingSensor);
                 if (_livingroom.movingSensor < 16) {
                     console.log("Turning light on, moving detected!");
-                    if (livingroom.lamp == '0') {
+                    if (_livingroom.lamp == '0') {
                         request('http://127.0.0.1:8080/api/mqtt/livingroom/lighton', function (error, response, body) {});
                     }
                 } else {
                     console.log("Turning light off, no moving detected!");
-                    if (livingroom.lamp == '1') {
+                    if (_livingroom.lamp == '1') {
                         request('http://127.0.0.1:8080/api/mqtt/livingroom/lightoff', function (error, response, body) {});
                     }
                 }
             }
-        }
+            else{
+                 console.log("Turning light off, no moving detected!");
+                    if (_livingroom.lamp == '1') {
+                        request('http://127.0.0.1:8080/api/mqtt/livingroom/lightoff', function (error, response, body) {});
+                    }
+            }
+            }
+            
+        
 
         function tempDetect() {
             console.log("Temp: ", _livingroom.tempSensor);
-            if (_settings.minTemp <= _livingroom.tempSensor) {
-                console.log("turning off heating");
-                if (livingroom.heating == '1') {
-                    request('http://127.0.0.1:8080/api/mqtt/livingroom/heatingoff', function (error, response, body) {});
-                }
-            } else {
+            if((_settings.home == 'true')){
+             if(_settings.minTemp > _livingroom.tempSensor) {
                 console.log("turning on heating");
-                if (livingroom.heating == '0') {
+                if (_livingroom.heating == '0') {
                     request('http://127.0.0.1:8080/api/mqtt/livingroom/heatingon', function (error, response, body) {});
                 }
             }
+            if ((_settings.minTemp <= _livingroom.tempSensor) ) {
+                console.log("turning off heating");
+                if (_livingroom.heating == '1') {
+                    request('http://127.0.0.1:8080/api/mqtt/livingroom/heatingoff', function (error, response, body) {});
+                }
+        } }
+        else{
+            console.log("turning off heating");
+                if (_livingroom.heating == '1') {
+                    request('http://127.0.0.1:8080/api/mqtt/livingroom/heatingoff', function (error, response, body) {});
+                }
         }
+           }
 
         function lightIntensity(){
-            if(_settings.lightDetect == 'true'){
+            if((_settings.lightDetect == 'true') && (_settings.home == 'true')){
             if(_livingroom.lightSensor < 200){
-                if (livingroom.lamp == '0') {
+                if (_livingroom.lamp == '0') {
                         request('http://127.0.0.1:8080/api/mqtt/livingroom/lighton', function (error, response, body) {});
                     }
-            }else {
-                    if (livingroom.lamp == '1') {
+            }
+            else {
+                    if (_livingroom.lamp == '1') {
                         request('http://127.0.0.1:8080/api/mqtt/livingroom/lightoff', function (error, response, body) {});
                     }
                 }
-        }}
+        }
+        if(_settings.home == 'false') {
+                    if (_livingroom.lamp == '1') {
+                        request('http://127.0.0.1:8080/api/mqtt/livingroom/lightoff', function (error, response, body) {});
+                    }
+                }
+    }
 
         function alarm() {
             if (_settings.alarm == 'true') {
